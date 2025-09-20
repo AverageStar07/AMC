@@ -1,12 +1,13 @@
 name: vps
 
-# Controls when the workflow will run
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
+  workflow_dispatch:    # manual run
+  schedule:
+    - cron: "0 */6 * * *"   # run every 6 hours
 
 jobs:
   build:
